@@ -1,0 +1,1 @@
+import{r as t,h as o}from"./p-62a3373a.js";let r=class{constructor(o){t(this,o)}getText(){return(this.first||"")+((t=this.middle)?` ${t}`:"")+((o=this.last)?` ${o}`:"");var t,o}render(){return o("div",{class:"my-comp"},"Hello, World! I'm ",this.getText())}};r.style=":host{display:block}.my-comp{color:#f60}";export{r as my_component}

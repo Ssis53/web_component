@@ -1,0 +1,37 @@
+<!--
+ * @Author: xiangfu.wu
+ * @Date: 2021-12-22 15:59:46
+ * @Description: 🚀
+ * @FilePath: /express_server/public/pages/home.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>主页</div>
+  <user-card></user-card>
+  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+</body>
+<!-- 原生web component直接引入js，user-card标签生效 -->
+<script type="module" src="../components/userCard/user-card.js"></script>
+
+<!-- 用stencil生成的web component需要加载loader，手动调用暴露出来的defineCustomElements方法，my-compnent标签才会生效 -->
+<script type="module" src="../components/stencilComp/loader/index.js"></script>
+<script type="module">
+  /**
+   *
+   * @function {*} defineCustomElements
+   * 调用已手动注册stencil包中包含的web component
+   */  
+  import { defineCustomElements } from '../components/stencilComp/loader/index.js'
+  console.log(defineCustomElements);
+  defineCustomElements(window, {})
+</script>
+</html>
+
